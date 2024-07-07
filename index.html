@@ -108,7 +108,7 @@
         <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
 
           <div class="navbar-brand col-lg-6 me-0">
-            <img src="logo.png" alt="logo">
+            <img src="assets/logo/logo.png" width="100" height="40" alt="logo">
           </div>
 
           <!-- <a class="navbar-brand col-lg-3 justify-content-lg-center" href="#">Centered nav</a> -->
@@ -160,7 +160,7 @@
             <div class="card-header">
               <div class="row align-items-center">
                 <div class="col-auto">
-                  <img src="lang-icon.png" alt="لۆگۆی زمان">
+                  <img src="assets/logo/ckb.png" class=" rounded-circle img-cover" width="25px" height="25px" alt="لۆگۆی زمان">
                 </div>
                 <div class="col-auto">
                   <ul class="navbar-nav d-lg-flex col-lg-6 justify-content-lg-end">
@@ -178,8 +178,8 @@
             <div class="card-body">
               <div id="editor" contenteditable="true">
                 <p>
-                  ئەمە نهێنی <u><mark class="custom-popover" data-bs-toggle="popover" title="ئەگەری هەڵەی ڕێنووسی" data-bs-placement="bottom"
-                      data-bs-content="body">نیە</mark></u> و
+                  ئەمە نهێنی <u><mark class="custom-popover" data-bs-toggle="popover" title="ئەگەری هەڵەی ڕێنووسی"
+                      data-bs-placement="bottom" data-bs-content="body">نیە</mark></u> و
                   هەرگیز نیهنیش نەبووە! تۆش لە ڕۆژگارە بە هەشتییەکانی خۆت
                   <u><mark>چنگک</mark></u> خۆشەویستم بدەرێ! ئەگەر حەکیمی ئەم باخچە گۆشە گیرەیت، ئاشوفتەترین
                   <u><mark>دەرێشی</mark></u> ئەم جەنگەڵەم! ئەگەر شازادەترین ئادەم کوژی، شەڕانگێزترین
@@ -206,11 +206,11 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const popoverTriggers = document.querySelectorAll('[data-bs-toggle="popover"]');
-  
+
       const popovers = [...popoverTriggers].map(trigger => new bootstrap.Popover(trigger, {
         trigger: 'manual',
         html: true,
-        sanitize: false, 
+        sanitize: false,
         content: () => `
         <div class="custom-popover">
 
@@ -232,11 +232,11 @@
           
         `
       }));
-  
+
       // Handle all click events
       document.addEventListener('click', (event) => {
         const target = event.target;
-  
+
         // Show popover on click of trigger
         const popoverTrigger = target.closest('[data-bs-toggle="popover"]');
         if (popoverTrigger) {
@@ -244,12 +244,12 @@
           popover.toggle();
           return; // Exit after showing popover
         }
-  
+
         // Hide popovers when clicking outside
         if (!target.matches('[data-bs-toggle="popover"]') && !target.closest('.popover')) {
           popovers.forEach(popover => popover.hide());
         }
-  
+
         // Handle button clicks within popover
         if (target.matches('.popover-body button')) {
           const buttonText = target.textContent.trim();
@@ -258,7 +258,7 @@
       });
     });
   </script>
-  
+
 </body>
 
 </html>
