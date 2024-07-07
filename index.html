@@ -157,9 +157,10 @@
                 <div class="col-auto d-flex align-items-center">
                   <p class="text-muted mb-0">٣٣ وشە</p>
                 </div>
+                
                 <div class="col-auto d-flex align-items-center">
-                  <a href="#"><i class="fas fa-copy fa-xl" style="color: #10aa4b;"></i></a>
-                  <a class="ms-3" href="#"><i class="fas fa-trash-can fa-xl" style="color: #b00732;"></i></a>
+                  <a href="#" id="copyText"><i class="fas fa-copy fa-xl" style="color: #10aa4b;"></i></a>
+                  <a class="ms-3" href="#" id="deleteText"><i class="fas fa-trash-can fa-xl" style="color: #b00732;"></i></a>
                 </div>
               </div>
             </div>
@@ -190,7 +191,26 @@
 
 
 
-
+  <script>
+    document.getElementById('copyText').addEventListener('click', function(event) {
+      event.preventDefault();
+      var editor = document.getElementById('editor');
+      var range = document.createRange();
+      range.selectNodeContents(editor);
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand('copy');
+      alert('دەقەی ڕاستکراوە کۆپی کرا.');
+    });
+  
+    document.getElementById('deleteText').addEventListener('click', function(event) {
+      event.preventDefault();
+      var editor = document.getElementById('editor');
+      editor.innerHTML = '';
+      alert('دەق سڕایەوە!');
+    });
+  </script>
 
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   <script>
